@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { AppLoading } from "expo";
+import { useFonts } from "expo-font";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import Main from "./index";
+
+import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
+
+const theme = {
+	...DefaultTheme,
+
+	// Specify custom property
+	myOwnProperty: true,
+	// Specify custom property in nested object
+	colors: {
+		primary: "#6200ee",
+		accent: "#03dac4",
+		background: "#ccc",
+
+		error: "#B00020",
+		text: "#111",
+		onBackground: "#000000",
+		onSurface: "#000000",
+	},
+};
+
+function App() {
+	let [fontsLoaded] = useFonts({
+		regular: require("./assets/fonts/OpenSans-Regular.ttf"),
+		bold: require("./assets/fonts/OpenSans-Bold.ttf"),
+		semibold: require("./assets/fonts/OpenSans-SemiBold.ttf"),
+	});
+	if (!fontsLoaded) {
+		return <AppLoading />;
+	} else {
+		return (
+			<>
+				<PaperProvider theme={theme}>
+					<Main />
+				</PaperProvider>
+			</>
+		);
+	}
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
