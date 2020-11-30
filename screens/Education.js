@@ -4,39 +4,44 @@ import {
 	View,
 	FlatList,
 	StyleSheet,
-	Text,
 	StatusBar,
-	TouchableOpacity,
 	ScrollView,
 } from "react-native";
 import { EducationData } from "../Data/data";
-import { useNavigation } from "@react-navigation/native";
+import MenuIcon from "../components/icon";
+
 import {
 	Title,
 	Paragraph,
 	Subheading,
 	Headline,
 	withTheme,
+	useTheme,
 } from "react-native-paper";
-import { MaterialIcons } from "@expo/vector-icons";
-import {  } from "react-native-paper";
-const Item = ({ school, degree, city, startdate, enddate, description }) => (
-	<View style={styles.item}>
-		<Headline style={styles.schooltitle}>{school}</Headline>
-		<Title style={styles.sub}>{degree}</Title>
-		<Subheading style={styles.sub}>{city}</Subheading>
-		<Paragraph style={styles.date}>
-			{startdate} - {enddate}
-		</Paragraph>
-		<Paragraph style={styles.description}>{description}</Paragraph>
-	</View>
-);
+
+const Item = ({ school, degree, city, startdate, enddate, description }) => {
+	const { colors } = useTheme();
+	return (
+		<View style={[styles.item, { backgroundColor: colors.backgroundColor }]}>
+			<Headline style={[styles.schooltitle, { color: colors.text }]}>
+				{school}
+			</Headline>
+			<Title style={[styles.sub, { color: colors.text }]}>{degree}</Title>
+			<Subheading style={[styles.sub, { color: colors.text }]}>
+				{city}
+			</Subheading>
+			<Paragraph style={[styles.date, { color: colors.text }]}>
+				{startdate} - {enddate}
+			</Paragraph>
+			<Paragraph style={[styles.description, { color: colors.text }]}>
+				{description}
+			</Paragraph>
+		</View>
+	);
+};
 
 const Education = () => {
-	const navigation = useNavigation();
-	const openMenu = () => {
-		navigation.openDrawer();
-	};
+	const { colors } = useTheme();
 	const renderItem = ({ item }) => (
 		<Item
 			school={item.school}
@@ -52,16 +57,12 @@ const Education = () => {
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
-
+<MenuIcon />
 				<ScrollView>
-					<MaterialIcons
-						name="menu"
-						size={40}
-						color="black"
-						onPress={openMenu}
-						style={styles.menu}
-					/>
-					<Headline style={styles.title}>Education</Headline>
+					
+					<Headline style={[styles.title, { color: colors.text }]}>
+						Education
+					</Headline>
 					<FlatList
 						data={EducationData}
 						renderItem={renderItem}
@@ -88,6 +89,8 @@ const styles = StyleSheet.create({
 		fontSize: 32,
 		textAlign: "center",
 		fontFamily: "bold",
+		paddingTop: 15,
+		paddingBottom: 5,
 	},
 	sub: {
 		fontSize: 24,

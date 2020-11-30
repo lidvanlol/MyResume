@@ -1,8 +1,6 @@
 import React from "react";
 import {
 	View,
-	Text,
-	TouchableOpacity,
 	Image,
 	StyleSheet,
 	SafeAreaView,
@@ -10,33 +8,17 @@ import {
 	ScrollView,
 } from "react-native";
 import Social from "./Social";
-import { MaterialIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
-import {
-	Headline,
-	Title,
-	Paragraph,
-	Subheading,
-	withTheme,
-} from "react-native-paper";
+
+import { Headline, Title, Paragraph, withTheme } from "react-native-paper";
+import MenuIcon from "../components/icon";
 function Home(props) {
-	const { colors, fonts } = props.theme;
-	const navigation = useNavigation();
-	const openMenu = () => {
-		navigation.openDrawer();
-	};
+	
 	return (
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
 				<ScrollView>
-					<MaterialIcons
-						name="menu"
-						size={40}
-						color="black"
-						onPress={openMenu}
-						style={styles.menu}
-					/>
+					<MenuIcon />
 
 					<View style={styles.center}>
 						<Image

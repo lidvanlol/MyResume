@@ -16,6 +16,7 @@ import ImageOverlay from "react-native-image-overlay";
 import { useNavigation } from "@react-navigation/native";
 import { Headline, Title, withTheme } from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
+import { ThemeContext } from "../components/ThemeContext";
 
 function Hobby() {
 	const navigation = useNavigation();

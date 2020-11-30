@@ -92,7 +92,7 @@ const Portolio = () => {
 const styles = StyleSheet.create({
 	item: {
 		backgroundColor: "#e0e0eb",
-
+		
 		margin: 20,
 	},
 

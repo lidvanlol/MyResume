@@ -10,32 +10,46 @@ import {
 	ScrollView,
 } from "react-native";
 import { WorkData } from "../Data/data";
-import { useNavigation } from "@react-navigation/native";
+
 import {
 	Headline,
 	Title,
 	Paragraph,
 	Subheading,
 	withTheme,
+	useTheme,
 } from "react-native-paper";
-import { MaterialIcons } from "@expo/vector-icons";
-
-const Item = ({ jobtitle, employer, startdate, enddate, description }) => (
-	<View style={styles.item}>
-		<Headline style={styles.jobtitle}>{jobtitle}</Headline>
-		<Subheading style={styles.sub}>{employer}</Subheading>
-		<Paragraph style={styles.date}>
-			{startdate} - {enddate}
-		</Paragraph>
-		<Paragraph style={styles.description}>{description}</Paragraph>
-	</View>
-);
+import MenuIcon from "../components/icon";
+const Item = ({ jobtitle, employer, startdate, enddate, description }) => {
+	const { colors } = useTheme();
+	return (
+		<View
+			style={[
+				styles.item,
+				{
+					backgroundColor: colors.backgroundColor,
+				},
+			]}
+		>
+			<Headline style={[styles.jobtitle, { color: colors.text }]}>
+				{jobtitle}
+			</Headline>
+			<Subheading style={[styles.sub, { color: colors.text }]}>
+				{employer}
+			</Subheading>
+			<Paragraph style={[styles.date, { color: colors.text }]}>
+				{startdate} - {enddate}
+			</Paragraph>
+			<Paragraph style={[styles.description, { color: colors.text }]}>
+				{description}
+			</Paragraph>
+		</View>
+	);
+};
 
 const WorkExperience = () => {
-	const navigation = useNavigation();
-	const openMenu = () => {
-		navigation.openDrawer();
-	};
+	const { colors } = useTheme();
+
 	const renderItem = ({ item }) => (
 		<Item
 			jobtitle={item.jobtitle}
@@ -50,17 +64,11 @@ const WorkExperience = () => {
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
-
+				<MenuIcon />
 				<ScrollView>
-					<MaterialIcons
-						name="menu"
-						size={40}
-						color="black"
-						onPress={openMenu}
-						style={styles.menu}
-					/>
-
-					<Headline style={styles.title}>Work Experience</Headline>
+					<Headline style={[styles.title, { color: colors.text }]}>
+						Work Experience
+					</Headline>
 					<FlatList
 						data={WorkData}
 						renderItem={renderItem}
@@ -74,7 +82,6 @@ const WorkExperience = () => {
 
 const styles = StyleSheet.create({
 	item: {
-		backgroundColor: "#e0e0eb",
 		padding: 20,
 		margin: 10,
 	},
@@ -86,6 +93,8 @@ const styles = StyleSheet.create({
 		fontSize: 32,
 		textAlign: "center",
 		fontFamily: "bold",
+		paddingTop: 15,
+		paddingBottom: 5,
 	},
 	sub: {
 		fontSize: 24,
