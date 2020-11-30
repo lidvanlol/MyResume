@@ -19,6 +19,7 @@ import {
 	Subheading,
 	Button,
 	Headline,
+	withTheme,
 } from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -28,7 +29,7 @@ const Item = ({ text, link, img, technologiesused }) => (
 			<Card.Content>
 				<Title style={styles.cardtitle}>{text}</Title>
 			</Card.Content>
-			<Card.Cover source={img} />
+			<Card.Cover style={{ borderColor: "#ccc" }} source={img} />
 			<Paragraph style={styles.tech}>
 				Tech used:{"\n"}
 				{technologiesused}
@@ -126,4 +127,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Portolio;
+export default withTheme(Portolio);

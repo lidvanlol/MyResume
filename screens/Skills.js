@@ -67,7 +67,7 @@ import {
 } from "react-native";
 import { skilssData } from "../Data/data";
 import { useNavigation } from "@react-navigation/native";
-import { Title, Paragraph, Subheading } from "react-native-paper";
+import { Title, withTheme } from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const Item = ({ skill, img }) => (
@@ -121,12 +121,12 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 32,
 		textAlign: "center",
-		fontFamily:'bold'
+		fontFamily: "bold",
 	},
 	skilltitle: {
 		padding: 10,
 		fontSize: 28,
-		fontFamily:'semibold'
+		fontFamily: "semibold",
 	},
 	menu: {
 		position: "relative",
@@ -140,4 +140,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Skills;
+export default withTheme(Skills);

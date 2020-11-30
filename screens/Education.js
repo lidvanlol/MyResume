@@ -11,9 +11,15 @@ import {
 } from "react-native";
 import { EducationData } from "../Data/data";
 import { useNavigation } from "@react-navigation/native";
-import { Title, Paragraph, Subheading, Headline } from "react-native-paper";
+import {
+	Title,
+	Paragraph,
+	Subheading,
+	Headline,
+	withTheme,
+} from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
-import { withTheme } from "react-native-paper";
+import {  } from "react-native-paper";
 const Item = ({ school, degree, city, startdate, enddate, description }) => (
 	<View style={styles.item}>
 		<Headline style={styles.schooltitle}>{school}</Headline>

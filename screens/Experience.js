@@ -11,7 +11,13 @@ import {
 } from "react-native";
 import { WorkData } from "../Data/data";
 import { useNavigation } from "@react-navigation/native";
-import { Headline, Title, Paragraph, Subheading } from "react-native-paper";
+import {
+	Headline,
+	Title,
+	Paragraph,
+	Subheading,
+	withTheme,
+} from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const Item = ({ jobtitle, employer, startdate, enddate, description }) => (
@@ -103,4 +109,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default WorkExperience;
+export default withTheme(WorkExperience);
