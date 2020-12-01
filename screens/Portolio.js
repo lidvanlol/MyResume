@@ -42,13 +42,15 @@ const Item = ({ text, link, img, technologiesused }) => {
 				</Paragraph>
 				<Card.Actions>
 					<Button
-						style={[styles.btn, { backgroundColor: colors.bg }]}
+						style={[styles.btn, {}]}
 						dark
 						onPress={() => {
 							Linking.openURL(link);
 						}}
 					>
-						<Text style={[styles.btntext, { color: colors.text }]}>Go TO</Text>
+						<Text style={[styles.btntext, { color: colors.text }]}>
+							Go To Link
+						</Text>
 					</Button>
 				</Card.Actions>
 			</Card>
@@ -114,12 +116,10 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		fontFamily: "semibold",
 	},
-	btn: {
-		backgroundColor: "#E0DEDE",
-	},
+
 	btntext: {
 		fontSize: 22,
-		color: "#111",
+
 		fontFamily: "semibold",
 	},
 });
