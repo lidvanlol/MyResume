@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { skilssData } from "../Data/data";
 
-import { Title, withTheme, Headline, useTheme } from "react-native-paper";
+import { Title, Headline, useTheme } from "react-native-paper";
 import MenuIcon from "../components/icon";
 
 const Item = ({ skill, img }) => {
@@ -39,7 +39,7 @@ const Skills = () => {
 			<SafeAreaView>
 				<StatusBar style="default" />
 				<MenuIcon />
-				<ScrollView>
+				<ScrollView style={{ marginBottom: 50 }}>
 					<Headline style={[styles.title, { color: colors.text }]}>
 						Skills
 					</Headline>
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default withTheme(Skills);
+export default Skills;

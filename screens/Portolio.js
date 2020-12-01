@@ -11,7 +11,7 @@ import {
 	Linking,
 } from "react-native";
 import { portfolioData } from "../Data/data";
-import { useNavigation } from "@react-navigation/native";
+
 import {
 	Card,
 	Title,
@@ -20,40 +20,44 @@ import {
 	Button,
 	Headline,
 	withTheme,
+	useTheme,
 } from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
+import MenuIcon from "../components/icon";
 
-const Item = ({ text, link, img, technologiesused }) => (
-	<View style={styles.item}>
-		<Card>
-			<Card.Content>
-				<Title style={styles.cardtitle}>{text}</Title>
-			</Card.Content>
-			<Card.Cover style={{ borderColor: "#ccc" }} source={img} />
-			<Paragraph style={styles.tech}>
-				Tech used:{"\n"}
-				{technologiesused}
-			</Paragraph>
-			<Card.Actions>
-				<Button
-					style={styles.btn}
-					dark
-					onPress={() => {
-						Linking.openURL(link);
-					}}
-				>
-					<Text style={styles.btntext}>Go TO</Text>
-				</Button>
-			</Card.Actions>
-		</Card>
-	</View>
-);
+const Item = ({ text, link, img, technologiesused }) => {
+	const { colors } = useTheme();
+	return (
+		<View style={styles.item}>
+			<Card style={{ backgroundColor: colors.backgroundColor }}>
+				<Card.Content>
+					<Title style={[styles.cardtitle, { color: colors.text }]}>
+						{text}
+					</Title>
+				</Card.Content>
+				<Card.Cover source={img} />
+				<Paragraph style={[styles.tech, { color: colors.text }]}>
+					Tech used:{"\n"}
+					{technologiesused}
+				</Paragraph>
+				<Card.Actions>
+					<Button
+						style={[styles.btn, { backgroundColor: colors.bg }]}
+						dark
+						onPress={() => {
+							Linking.openURL(link);
+						}}
+					>
+						<Text style={[styles.btntext, { color: colors.text }]}>Go TO</Text>
+					</Button>
+				</Card.Actions>
+			</Card>
+		</View>
+	);
+};
 
 const Portolio = () => {
-	const navigation = useNavigation();
-	const openMenu = () => {
-		navigation.openDrawer();
-	};
+	const { colors } = useTheme();
 	const renderItem = ({ item }) => (
 		<Item
 			text={item.text}
@@ -67,17 +71,12 @@ const Portolio = () => {
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
+				<MenuIcon />
 
-				<ScrollView>
-					<MaterialIcons
-						name="menu"
-						size={40}
-						color="black"
-						onPress={openMenu}
-						style={styles.menu}
-					/>
-
-					<Headline style={styles.title}>Portolio</Headline>
+				<ScrollView style={{ marginBottom: 50 }}>
+					<Headline style={[styles.title, { color: colors.text }]}>
+						Portfolio
+					</Headline>
 					<FlatList
 						data={portfolioData}
 						renderItem={renderItem}
@@ -91,8 +90,6 @@ const Portolio = () => {
 
 const styles = StyleSheet.create({
 	item: {
-		backgroundColor: "#e0e0eb",
-		
 		margin: 20,
 	},
 
@@ -127,4 +124,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default withTheme(Portolio);
+export default Portolio;

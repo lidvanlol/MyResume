@@ -57,9 +57,8 @@ const Education = () => {
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
-<MenuIcon />
-				<ScrollView>
-					
+				<MenuIcon />
+				<ScrollView style={{ marginBottom: 50 }}>
 					<Headline style={[styles.title, { color: colors.text }]}>
 						Education
 					</Headline>

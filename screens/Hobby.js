@@ -12,70 +12,58 @@ import {
 	ImageBackground,
 } from "react-native";
 import ImageOverlay from "react-native-image-overlay";
+import MenuIcon from "../components/icon";
 
-import { useNavigation } from "@react-navigation/native";
-import { Headline, Title, withTheme } from "react-native-paper";
-import { MaterialIcons } from "@expo/vector-icons";
-import { ThemeContext } from "../components/ThemeContext";
+import { Headline, useTheme } from "react-native-paper";
 
 function Hobby() {
-	const navigation = useNavigation();
-
-	const openMenu = () => {
-		navigation.openDrawer();
-	};
+	const { colors } = useTheme();
 
 	return (
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
-				<ScrollView>
-					<View>
-						<MaterialIcons
-							name="menu"
-							size={40}
-							color="black"
-							onPress={openMenu}
-							style={styles.menu}
+				<MenuIcon />
+				<ScrollView style={{ marginBottom: 50 }}>
+					<Headline style={[styles.title, { color: colors.text }]}>
+						My Hobbies
+					</Headline>
+					<View style={styles.center}>
+						<ImageOverlay
+							source={require("../assets/book.jpg")}
+							overlayAlpha={0.7}
+							title="Book Reading"
+							contentPosition="center"
+							titleStyle={styles.title}
+							containerStyle={{ margin: 10 }}
 						/>
-						<Headline style={styles.title}>My Hobbies</Headline>
-						<View style={styles.center}>
-							<ImageOverlay
-								source={require("../assets/book.jpg")}
-								overlayAlpha={0.7}
-								title="Book Reading"
-								contentPosition="center"
-								titleStyle={styles.title}
-								containerStyle={{ margin: 10 }}
-							/>
 
-							<ImageOverlay
-								source={require("../assets/dj.png")}
-								overlayAlpha={0.7}
-								title="Dj"
-								contentPosition="center"
-								titleStyle={styles.title}
-								containerStyle={{ margin: 10 }}
-							/>
+						<ImageOverlay
+							source={require("../assets/dj.png")}
+							overlayAlpha={0.7}
+							title="Dj"
+							contentPosition="center"
+							titleStyle={styles.title}
+							containerStyle={{ margin: 10 }}
+						/>
 
-							<ImageOverlay
-								source={require("../assets/walk.jpg")}
-								overlayAlpha={0.7}
-								title="Hiking"
-								contentPosition="center"
-								titleStyle={styles.title}
-								containerStyle={{ margin: 10 }}
-							/>
+						<ImageOverlay
+							source={require("../assets/walk.jpg")}
+							overlayAlpha={0.7}
+							title="Hiking"
+							contentPosition="center"
+							titleStyle={styles.title}
+							containerStyle={{ margin: 10 }}
+						/>
 
-							<ImageOverlay
-								source={require("../assets/gym.jpg")}
-								overlayAlpha={0.7}
-								title="Gym"
-								contentPosition="center"
-								titleStyle={styles.title}
-								containerStyle={{ margin: 10 }}
-							/>
-						</View>
+						<ImageOverlay
+							source={require("../assets/gym.jpg")}
+							overlayAlpha={0.7}
+							title="Gym"
+							contentPosition="center"
+							titleStyle={styles.title}
+							containerStyle={{ margin: 10 }}
+						/>
 					</View>
 				</ScrollView>
 			</SafeAreaView>
@@ -100,4 +88,4 @@ const styles = StyleSheet.create({
 		fontFamily: "semibold",
 	},
 });
-export default withTheme(Hobby);
+export default Hobby;

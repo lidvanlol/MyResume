@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
 		alignItems: "flex-start",
 		flexDirection: "row",
 		paddingTop: 10,
+		
 	},
 	ln: {
 		marginRight: 20,

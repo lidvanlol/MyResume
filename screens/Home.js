@@ -9,29 +9,40 @@ import {
 } from "react-native";
 import Social from "./Social";
 
-import { Headline, Title, Paragraph, withTheme } from "react-native-paper";
+import { Headline, Title, Paragraph, useTheme } from "react-native-paper";
 import MenuIcon from "../components/icon";
 function Home(props) {
-	
+	const { colors } = useTheme();
 	return (
 		<>
 			<SafeAreaView>
 				<StatusBar style="default" />
-				<ScrollView>
-					<MenuIcon />
-
+				<MenuIcon />
+				<ScrollView style={{marginBottom:50}}>
 					<View style={styles.center}>
 						<Image
 							source={require("../assets/download.png")}
 							style={styles.img}
 						/>
-						<Headline style={styles.h1}>Filip Jovkovic</Headline>
-						<Title style={styles.h2}>Front End Developer</Title>
-						<Paragraph style={styles.p}>
+						<Headline style={[styles.h1, { color: colors.text }]}>
+							Filip Jovkovic
+						</Headline>
+						<Title style={[styles.h2, { color: colors.text }]}>
+							Front End Developer
+						</Title>
+						<Paragraph style={[styles.p, { color: colors.text }]}>
 							Experienced Frontend Developer with a demonstrated history of
 							working in the information technology and services industry.
 							Skilled in HTML,CSS,SCSS,BOOTSTRAP,JS,JQUERY,React Native,React.
 						</Paragraph>
+					</View>
+					<View
+						style={{
+							alignItems: "center",
+
+							paddingBottom: 30,
+						}}
+					>
 						<Social />
 					</View>
 				</ScrollView>
@@ -77,4 +88,4 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 });
-export default withTheme(Home);
+export default Home;

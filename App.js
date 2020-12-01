@@ -39,13 +39,14 @@ const App = () => {
 			background: "#ffffff",
 			text: "#333333",
 			backgroundColor: "#e6e7eb",
+			bg: "#ccc",
 		},
 	};
 
 	const CustomDarkTheme = {
 		...NavigationDarkTheme,
 		...PaperDarkTheme,
-		
+
 		colors: {
 			...NavigationDarkTheme.colors,
 			...PaperDarkTheme.colors,

@@ -13,7 +13,6 @@ import { WorkData } from "../Data/data";
 
 import {
 	Headline,
-	Title,
 	Paragraph,
 	Subheading,
 	withTheme,
@@ -65,7 +64,7 @@ const WorkExperience = () => {
 			<SafeAreaView>
 				<StatusBar style="default" />
 				<MenuIcon />
-				<ScrollView>
+				<ScrollView style={{ marginBottom: 50 }}>
 					<Headline style={[styles.title, { color: colors.text }]}>
 						Work Experience
 					</Headline>

@@ -33,16 +33,16 @@ export function DrawerContent(props) {
 						/>
 						<DrawerItem
 							icon={({ color, size }) => (
-								<Icon name="account-outline" color={color} size={size} />
+								<Icon name="briefcase-edit-outline" color={color} size={size} />
 							)}
-							label="WorkExperience"
+							label="Work Experience"
 							onPress={() => {
 								props.navigation.navigate("WorkExperience");
 							}}
 						/>
 						<DrawerItem
 							icon={({ color, size }) => (
-								<Icon name="bookmark-outline" color={color} size={size} />
+								<Icon name="school" color={color} size={size} />
 							)}
 							label="Education"
 							onPress={() => {
@@ -51,7 +51,7 @@ export function DrawerContent(props) {
 						/>
 						<DrawerItem
 							icon={({ color, size }) => (
-								<Icon name="settings-outline" color={color} size={size} />
+								<Icon name="code-braces" color={color} size={size} />
 							)}
 							label="Skills"
 							onPress={() => {
@@ -60,16 +60,16 @@ export function DrawerContent(props) {
 						/>
 						<DrawerItem
 							icon={({ color, size }) => (
-								<Icon name="account-check-outline" color={color} size={size} />
+								<Icon name="cloud-upload-outline" color={color} size={size} />
 							)}
-							label="Portolio"
+							label="Portfolio"
 							onPress={() => {
 								props.navigation.navigate("Portolio");
 							}}
 						/>
 						<DrawerItem
 							icon={({ color, size }) => (
-								<Icon name="account-check-outline" color={color} size={size} />
+								<Icon name="script-outline" color={color} size={size} />
 							)}
 							label="Hobby"
 							onPress={() => {
@@ -101,32 +101,7 @@ const styles = StyleSheet.create({
 	drawerContent: {
 		flex: 1,
 	},
-	userInfoSection: {
-		paddingLeft: 20,
-	},
-	title: {
-		fontSize: 16,
-		marginTop: 3,
-		fontWeight: "bold",
-	},
-	caption: {
-		fontSize: 14,
-		lineHeight: 14,
-	},
-	row: {
-		marginTop: 20,
-		flexDirection: "row",
-		alignItems: "center",
-	},
-	section: {
-		flexDirection: "row",
-		alignItems: "center",
-		marginRight: 15,
-	},
-	paragraph: {
-		fontWeight: "bold",
-		marginRight: 3,
-	},
+
 	drawerSection: {
 		marginTop: 15,
 	},
