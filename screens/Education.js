@@ -58,7 +58,7 @@ const Education = () => {
 			<SafeAreaView>
 				<StatusBar style="default" />
 				<MenuIcon />
-				<ScrollView style={{ marginBottom: 50 }}>
+				<ScrollView style={{ marginBottom: 40 }}>
 					<Headline style={[styles.title, { color: colors.text }]}>
 						Education
 					</Headline>
@@ -88,8 +88,8 @@ const styles = StyleSheet.create({
 		fontSize: 32,
 		textAlign: "center",
 		fontFamily: "bold",
-		paddingTop: 15,
-		paddingBottom: 5,
+		paddingTop: 20,
+		paddingBottom: 10,
 	},
 	sub: {
 		fontSize: 24,

@@ -18,7 +18,7 @@ function Home(props) {
 			<SafeAreaView>
 				<StatusBar style="default" />
 				<MenuIcon />
-				<ScrollView style={{marginBottom:50}}>
+				<ScrollView style={{marginBottom:40}}>
 					<View style={styles.center}>
 						<Image
 							source={require("../assets/download.png")}
