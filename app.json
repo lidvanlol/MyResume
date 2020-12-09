@@ -1,8 +1,8 @@
 {
 	"expo": {
-		"name": "filipresume",
-		"slug": "filipresume",
-		"version": "1.0.0",
+		"name": "FilipJ'S Resume",
+		"slug": "filipjsresume",
+		"version": "1.0.1",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
 		"splash": {
@@ -11,7 +11,7 @@
 			"backgroundColor": "#e6f2f4"
 		},
 		"updates": {
-			"fallbackToCacheTimeout": 0
+			"fallbackToCacheTimeout": 30
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
@@ -21,9 +21,9 @@
 			"permissions": [],
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
+				"backgroundColor": "#e6f2f4"
 			},
-			"package": "com.promaja123.filipresume"
+			"package": "com.myresume.filipresume"
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
