@@ -1,8 +1,8 @@
 {
 	"expo": {
-		"name": "FilipJ'S Resume",
-		"slug": "filipjsresume",
-		"version": "1.0.1",
+		"name": "Filip's CV",
+		"slug": "filipscv",
+		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
 		"splash": {
@@ -21,9 +21,9 @@
 			"permissions": [],
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#e6f2f4"
+				"backgroundColor": "#e6e9e9"
 			},
-			"package": "com.myresume.filipresume"
+			"package": "com.resume.filipscv"
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
